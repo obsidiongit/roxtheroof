@@ -98,39 +98,52 @@ function initTestimonialsCarousel() {
   const track = document.getElementById('testimonialsTrack');
   if (!track) return;
 
-  // Clone all cards and append for seamless infinite loop
   const originals = Array.from(track.querySelectorAll('.testimonial-card'));
+  if (originals.length === 0) return;
+
+  // Triple clone for true infinite feel (Original - CloneA - CloneB)
+  // This ensures that even on huge screens, we have enough content to scroll
   originals.forEach(card => {
-    const clone = card.cloneNode(true);
-    clone.setAttribute('aria-hidden', 'true');
-    track.appendChild(clone);
+    track.appendChild(card.cloneNode(true)).setAttribute('aria-hidden', 'true');
+  });
+  originals.forEach(card => {
+    track.appendChild(card.cloneNode(true)).setAttribute('aria-hidden', 'true');
   });
 
-  const SPEED = 0.6; // px per frame (~36px/s at 60fps)
+  const SPEED = 0.6;
   let isHovered = false;
   let isDragging = false;
   let dragStartX = 0;
   let dragScrollStart = 0;
   let hasDragged = false;
-  let loopBoundary = 0; // set after layout
+  let loopWidth = 0;
 
-  function isPaused() {
-    return isHovered || isDragging;
+  function updateLoopBoundary() {
+    // The loop boundary is the total width of one full set of testimonials
+    // We use the offset of the first card in the second set
+    const firstClone = track.children[originals.length];
+    if (firstClone) {
+      loopWidth = firstClone.offsetLeft - track.children[0].offsetLeft;
+    } else {
+      loopWidth = track.scrollWidth / 3;
+    }
   }
 
-  // Measure the exact start of the cloned section after the browser lays out
+  // Initial setup after layout
   requestAnimationFrame(() => {
-    // First clone is immediately after the originals
-    const firstClone = track.children[originals.length];
-    loopBoundary = firstClone ? firstClone.offsetLeft : track.scrollWidth / 2;
+    updateLoopBoundary();
 
-    // Continuous scroll tick
+    // Start in the middle set to allow dragging backwards immediately
+    track.scrollLeft = loopWidth;
+
     function tick() {
-      if (!isPaused()) {
+      if (!isHovered && !isDragging) {
         track.scrollLeft += SPEED;
-        // When we've scrolled into the clone territory, seamlessly jump back
-        if (track.scrollLeft >= loopBoundary) {
-          track.scrollLeft -= loopBoundary;
+
+        // If we've scrolled past the first set of clones into the second set, 
+        // jump back by one loopWidth to stay in the "middle" seamless zone
+        if (track.scrollLeft >= loopWidth * 2) {
+          track.scrollLeft -= loopWidth;
         }
       }
       requestAnimationFrame(tick);
@@ -138,11 +151,13 @@ function initTestimonialsCarousel() {
     requestAnimationFrame(tick);
   });
 
-  // Pause on hover, resume on leave
+  // Handle window resize to re-calculate boundaries
+  window.addEventListener('resize', updateLoopBoundary);
+
+  // Interaction handlers
   track.addEventListener('mouseenter', () => { isHovered = true; });
   track.addEventListener('mouseleave', () => { isHovered = false; });
 
-  // Drag to scroll while hovered
   track.addEventListener('mousedown', (e) => {
     isDragging = true;
     hasDragged = false;
@@ -164,14 +179,16 @@ function initTestimonialsCarousel() {
     const x = e.pageX - track.offsetLeft;
     const walk = (x - dragStartX) * 1.5;
     if (Math.abs(walk) > 5) hasDragged = true;
+
     let newScroll = dragScrollStart - walk;
-    // Keep within the looping range
-    if (newScroll < 0) newScroll += loopBoundary;
-    if (newScroll >= loopBoundary) newScroll -= loopBoundary;
+
+    // Wrap during drag
+    if (newScroll < loopWidth) newScroll += loopWidth;
+    if (newScroll >= loopWidth * 2) newScroll -= loopWidth;
+
     track.scrollLeft = newScroll;
   });
 
-  // Suppress click after drag
   track.addEventListener('click', (e) => {
     if (hasDragged) {
       e.preventDefault();
@@ -186,7 +203,7 @@ function initTestimonialsCarousel() {
   track.addEventListener('touchstart', (e) => {
     touchStartX = e.touches[0].pageX - track.offsetLeft;
     touchScrollStart = track.scrollLeft;
-    isHovered = true; // pause auto-scroll on touch
+    isHovered = true;
   }, { passive: true });
 
   track.addEventListener('touchend', () => {
@@ -197,8 +214,10 @@ function initTestimonialsCarousel() {
     const x = e.touches[0].pageX - track.offsetLeft;
     const walk = (x - touchStartX) * 1.5;
     let newScroll = touchScrollStart - walk;
-    if (newScroll < 0) newScroll += loopBoundary;
-    if (newScroll >= loopBoundary) newScroll -= loopBoundary;
+
+    if (newScroll < loopWidth) newScroll += loopWidth;
+    if (newScroll >= loopWidth * 2) newScroll -= loopWidth;
+
     track.scrollLeft = newScroll;
   }, { passive: true });
 }
