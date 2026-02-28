@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rox the Roof | Premium Roofing in Lexington, NE</title>
+  <meta name="description"
+    content="Rox the Roof - Woman-owned, Latin-owned roofing company in Lexington, NE. Residential & commercial roofing, gutters, siding, windows, and remodeling.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-bar-content">
+      <span class="top-bar-text">Need <strong>roofing or home improvement</strong> help?</span>
+      <a href="mailto:roxtheroof@gmail.com" class="top-bar-email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        roxtheroof@gmail.com
+      </a>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo" aria-label="Rox the Roof Home">
+        <img src="Assets/RoxtheRoof Logo Red SVG.svg" alt="Rox the Roof" class="nav-logo-img">
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="tel:3086511030" class="nav-phone">
+          <div class="phone-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+            </svg>
+          </div>
+          <span>308-651-1030</span>
+        </a>
+        <a href="tel:3086511030" class="btn btn-nav-cta">CALL NOW</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Video Background -->
+  <section class="hero" id="home">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="Assets/roxtheroofhero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <span class="hero-label">Lexington's Trusted</span>
+        <h1 class="hero-title">Roofing &<br>Home Improvement</h1>
+        <span class="hero-subtitle">Experts</span>
+        <p class="hero-desc">Woman-owned and Latin-owned, we deliver exceptional roofing, gutters, siding, and
+          remodeling services with quality you can trust.</p>
+        <a href="tel:3086511030" class="btn btn-primary btn-lg">CALL TO BOOK</a>
+      </div>
+      <div class="hero-form-wrapper">
+        <form class="hero-form" id="heroForm">
+          <h3 class="form-title">Get Your Free Estimate</h3>
+          <p class="form-subtitle">No obligation • Fast response</p>
+          <div class="form-group">
+            <input type="text" id="fullName" placeholder="Full Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" placeholder="Email Address" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+          </div>
+          <div class="form-group">
+            <select id="service" required>
+              <option value="" disabled selected>Select a Service</option>
+              <option value="residential">Residential Roofing</option>
+              <option value="commercial">Commercial Roofing</option>
+              <option value="metal">Metal Roofing</option>
+              <option value="shingles">Asphalt Shingles</option>
+              <option value="gutters">Seamless Gutters</option>
+              <option value="windows">Window Installation</option>
+              <option value="remodeling">Interior Remodeling</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea id="message" placeholder="Tell us about your project..." rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-form-submit">Request Free Estimate</button>
+          <p class="form-privacy">🔒 Your info is safe with us</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Bar -->
+  <section class="contact-bar" id="book">
+    <div class="contact-bar-container">
+      <h2 class="contact-bar-title">READY TO <strong>GET STARTED?</strong></h2>
+      <div class="contact-bar-cards">
+        <a href="tel:3086511030" class="contact-card">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+            </svg>
+          </div>
+          <div class="contact-card-content">
+            <span class="contact-card-label">Call to Book</span>
+            <span class="contact-card-value">308-651-1030</span>
+          </div>
+        </a>
+        <a href="mailto:roxtheroof@gmail.com" class="contact-card">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+          <div class="contact-card-content">
+            <span class="contact-card-label">Email Us</span>
+            <span class="contact-card-value">roxtheroof@gmail.com</span>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/roofing308" target="_blank" class="contact-card">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
+          </div>
+          <div class="contact-card-content">
+            <span class="contact-card-label">Follow Us</span>
+            <span class="contact-card-value">Facebook</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">What We Do</span>
+        <h2 class="section-title">Our Professional <strong>Services</strong></h2>
+        <p class="section-desc">Comprehensive roofing and home improvement solutions tailored to your needs</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="service-card-number">01</span>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+              <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" />
+              <polyline points="9 21 9 13 15 13 15 21" />
+            </svg></div>
+          <h3 class="service-title">Residential Roofing</h3>
+          <p class="service-desc">Complete roof installation and repair for homes. Protect your family with quality
+            workmanship and materials you can trust.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-card-number">02</span>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+              <rect x="4" y="2" width="16" height="20" rx="1" />
+              <line x1="9" y1="6" x2="9" y2="6.01" />
+              <line x1="15" y1="6" x2="15" y2="6.01" />
+              <line x1="9" y1="10" x2="9" y2="10.01" />
+              <line x1="15" y1="10" x2="15" y2="10.01" />
+              <line x1="9" y1="14" x2="9" y2="14.01" />
+              <line x1="15" y1="14" x2="15" y2="14.01" />
+              <path d="M9 22v-4h6v4" />
+            </svg></div>
+          <h3 class="service-title">Commercial Roofing</h3>
+          <p class="service-desc">Durable roofing solutions for businesses and commercial properties. We minimize
+            disruption while maximizing protection.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-card-number">03</span>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+              <path d="M12 2L2 8l10 6 10-6-10-6z" />
+              <path d="M2 16l10 6 10-6" />
+              <path d="M2 12l10 6 10-6" />
+            </svg></div>
+          <h3 class="service-title">Asphalt Shingles</h3>
+          <p class="service-desc">Classic, affordable, and reliable. Multiple styles and colors to complement your
+            home's architecture.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-card-number">04</span>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+              <path d="M3 9.5L12 3l9 6.5" />
+              <path d="M5 8v12h14V8" />
+              <line x1="3" y1="21" x2="21" y2="21" />
+              <line x1="8" y1="13" x2="16" y2="13" />
+              <line x1="8" y1="17" x2="16" y2="17" />
+            </svg></div>
+          <h3 class="service-title">Metal Roofing</h3>
+          <p class="service-desc">Long-lasting metal roofs that stand up to Nebraska weather. 40-70 year lifespan with
+            minimal maintenance.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-card-number">05</span>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+              <path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z" />
+            </svg></div>
+          <h3 class="service-title">Seamless Gutters</h3>
+          <p class="service-desc">Custom-fit seamless gutters that protect your foundation and landscaping from water
+            damage.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-card-number">06</span>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+              <path d="M2 20h20" />
+              <path d="M5 20V8l7-4 7 4v12" />
+              <line x1="9" y1="20" x2="9" y2="12" />
+              <line x1="15" y1="20" x2="15" y2="12" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg></div>
+          <h3 class="service-title">Fascia & Soffit</h3>
+          <p class="service-desc">Complete your roofline with quality fascia and soffit installation. Protection meets
+            curb appeal.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-card-number">07</span>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+              <rect x="3" y="3" width="18" height="18" rx="1" />
+              <line x1="12" y1="3" x2="12" y2="21" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+            </svg></div>
+          <h3 class="service-title">Window Installation</h3>
+          <p class="service-desc">Energy-efficient windows that reduce utility bills and enhance your home's comfort and
+            value.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-card-number">08</span>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+              <path
+                d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
+            </svg></div>
+          <h3 class="service-title">Interior Remodeling</h3>
+          <p class="service-desc">Kitchen, bathroom, and home renovations. Transform your living spaces with our expert
+            craftsmanship.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <span class="section-label">About Us</span>
+          <h2 class="section-title">Meet <strong>Rox the Roof</strong></h2>
+          <p class="about-text">
+            Based right here in <strong>Lexington, Nebraska</strong>, Rox the Roof is a
+            <strong>woman-owned and Latin-owned</strong> business built on quality, trust, and community.
+          </p>
+          <p class="about-text">
+            We believe every home deserves the best protection. From asphalt shingles to metal roofing,
+            seamless gutters to interior remodeling — we bring dedication and attention to detail to every project.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number">100+</span>
+              <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">5.0</span>
+              <span class="stat-label">Star Rating</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Satisfaction</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="visual-card">
+            <div class="visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg></div>
+            <div>
+              <h4>Woman-Owned</h4>
+              <p>Proudly woman-owned, bringing dedication and care to every project.</p>
+            </div>
+          </div>
+          <div class="visual-card">
+            <div class="visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+              </svg></div>
+            <div>
+              <h4>Latin-Owned</h4>
+              <p>A diverse team committed to serving our community with respect.</p>
+            </div>
+          </div>
+          <div class="visual-card">
+            <div class="visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg></div>
+            <div>
+              <h4>Quality Guaranteed</h4>
+              <p>We stand behind our work with warranties and your satisfaction.</p>
+            </div>
+          </div>
+          <div class="visual-card">
+            <div class="visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                <line x1="12" y1="1" x2="12" y2="23" />
+                <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+              </svg></div>
+            <div>
+              <h4>Free Estimates</h4>
+              <p>No-obligation quotes with transparent, honest pricing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Customer Reviews</span>
+        <h2 class="section-title">What Our <strong>Clients Say</strong></h2>
+      </div>
+      <div class="testimonials-carousel-wrapper">
+        <div class="testimonials-track" id="testimonialsTrack">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"They did an amazing job on our roof! Professional, on time, and the quality
+              exceeded our expectations. Highly recommend Rox the Roof!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">JM</div>
+              <div class="author-info">
+                <span class="author-name">Jennifer M.</span>
+                <span class="author-location">Residential Roofing</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Best gutters we've ever had installed. The seamless design looks great and
+              works
+              perfectly. They really take pride in their work."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">RD</div>
+              <div class="author-info">
+                <span class="author-name">Robert D.</span>
+                <span class="author-location">Seamless Gutters</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Our new metal roof is beautiful and we're already seeing savings on our energy
+              bills. Great communication throughout the project!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">SL</div>
+              <div class="author-info">
+                <span class="author-name">Sandra L.</span>
+                <span class="author-location">Metal Roofing</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"From start to finish, the team was incredible. They replaced our windows and
+              the difference in energy efficiency is night and day. Couldn't be happier!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">TK</div>
+              <div class="author-info">
+                <span class="author-name">Thomas K.</span>
+                <span class="author-location">Window Installation</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"We had storm damage and they were out within 24 hours to assess and start
+              repairs. Their commitment to this community really shows. Outstanding service!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">MC</div>
+              <div class="author-info">
+                <span class="author-name">Maria C.</span>
+                <span class="author-location">Residential Roofing</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"The kitchen remodel exceeded every expectation. The team was respectful, clean,
+              and the craftsmanship is top-notch. Our home feels brand new!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">BW</div>
+              <div class="author-info">
+                <span class="author-name">Beth W.</span>
+                <span class="author-location">Interior Remodeling</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business Card Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="business-card">
+        <div class="business-card-header">
+          <img src="Assets/RoxtheRoof Logo Red SVG.svg" alt="Rox the Roof" class="business-card-logo">
+          <div class="business-card-intro">
+            <h2>Rox the Roof</h2>
+            <p class="tagline">Quality roofing you can trust — woman-owned & Latin-owned</p>
+          </div>
+        </div>
+
+        <div class="business-card-details">
+          <div class="business-card-section">
+            <h3>Contact</h3>
+            <div class="detail-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+              </svg>
+              <a href="tel:3086511030">308-651-1030</a>
+            </div>
+            <div class="detail-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <a href="mailto:roxtheroof@gmail.com">roxtheroof@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="business-card-section">
+            <h3>Service Area</h3>
+            <p>Proudly serving Lexington, NE and surrounding communities in Central Nebraska.</p>
+          </div>
+        </div>
+
+        <div class="business-card-cta">
+          <a href="tel:3086511030" class="btn btn-primary btn-lg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+              <path
+                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+            </svg>
+            CALL TO BOOK
+          </a>
+          <a href="mailto:roxtheroof@gmail.com" class="btn btn-secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            EMAIL US
+          </a>
+        </div>
+
+        <div class="business-card-badges">
+          <span class="badge-item">✓ Woman-Owned</span>
+          <span class="badge-item">✓ Latin-Owned</span>
+          <span class="badge-item">✓ Free Estimates</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="footer-logo">
+            <img src="Assets/RoxtheRoof Logo Red SVG.svg" alt="Rox the Roof" class="footer-logo-img">
+          </a>
+          <p>Woman-owned, Latin-owned roofing company proudly serving Lexington, Nebraska and surrounding communities.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-services">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Residential Roofing</a></li>
+            <li><a href="#services">Commercial Roofing</a></li>
+            <li><a href="#services">Seamless Gutters</a></li>
+            <li><a href="#services">Metal Roofing</a></li>
+            <li><a href="#services">Window Installation</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p><a href="tel:3086511030">308-651-1030</a></p>
+          <p><a href="mailto:roxtheroof@gmail.com">roxtheroof@gmail.com</a></p>
+          <p>Lexington, Nebraska</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Rox the Roof. All rights reserved. Woman-Owned & Latin-Owned Business.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="chatbot.js"></script>
+
+</body>
+
+</html>

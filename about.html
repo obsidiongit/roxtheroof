@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Rox the Roof - Lexington, NE</title>
+    <meta name="description"
+        content="Learn about Rox the Roof — a woman-owned, Latin-owned roofing company in Lexington, Nebraska built on quality, trust, and community.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-hero-inner {
+            background: linear-gradient(135deg, var(--wine-red) 0%, var(--dusty-rose) 100%);
+            padding: var(--space-4xl) 0 var(--space-3xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero-inner::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .page-hero-inner::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .page-hero-inner .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .page-breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: var(--space-lg);
+        }
+
+        .page-breadcrumb a {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .page-breadcrumb a:hover {
+            color: white;
+        }
+
+        .page-breadcrumb span {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .page-hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.25rem, 4vw, 3.5rem);
+            color: white;
+            margin-bottom: var(--space-md);
+            line-height: 1.15;
+        }
+
+        .page-hero-title strong {
+            color: rgba(255, 255, 255, 0.85);
+            font-style: italic;
+        }
+
+        .page-hero-desc {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Story section */
+        .story-section {
+            padding: var(--space-4xl) 0;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-4xl);
+            align-items: center;
+        }
+
+        .story-label {
+            display: inline-block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--wine-red);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: var(--space-md);
+        }
+
+        .story-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            color: var(--dark);
+            margin-bottom: var(--space-lg);
+            line-height: 1.2;
+        }
+
+        .story-title strong {
+            color: var(--wine-red);
+        }
+
+        .story-text {
+            color: var(--slate-gray);
+            line-height: 1.9;
+            margin-bottom: var(--space-lg);
+            font-size: 1.05rem;
+        }
+
+        .story-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+
+        .story-badge {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            background: rgba(102, 16, 31, 0.07);
+            color: var(--wine-red);
+            border-radius: var(--radius-full);
+            padding: var(--space-sm) var(--space-lg);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Stats strip */
+        .stats-strip {
+            background: var(--wine-red);
+            padding: var(--space-3xl) 0;
+        }
+
+        .stats-strip-inner {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-4xl);
+            flex-wrap: wrap;
+        }
+
+        .strip-stat {
+            text-align: center;
+            color: white;
+        }
+
+        .strip-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            font-family: var(--font-display);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .strip-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Values */
+        .values-section {
+            padding: var(--space-4xl) 0;
+            background: var(--off-white);
+        }
+
+        /* Team/identity section */
+        .identity-section {
+            padding: var(--space-4xl) 0;
+        }
+
+        .identity-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3xl);
+            align-items: start;
+        }
+
+        .identity-card {
+            background: var(--off-white);
+            border-radius: var(--radius-xl);
+            padding: var(--space-2xl);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .identity-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--wine-red), var(--dusty-rose));
+        }
+
+        .identity-card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: var(--space-md);
+            margin-top: 4px;
+        }
+
+        .identity-card p {
+            color: var(--slate-gray);
+            line-height: 1.8;
+        }
+
+        /* CTA */
+        .about-cta {
+            background: linear-gradient(135deg, var(--wine-red), var(--dusty-rose));
+            padding: var(--space-4xl) 0;
+            text-align: center;
+        }
+
+        .about-cta h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            color: white;
+            margin-bottom: var(--space-md);
+        }
+
+        .about-cta p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.1rem;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--wine-red);
+            padding: var(--space-md) var(--space-2xl);
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+        }
+
+        @media (max-width: 1024px) {
+
+            .story-grid,
+            .identity-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stats-strip-inner {
+                gap: var(--space-2xl);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <span class="top-bar-text">Need <strong>roofing or home improvement</strong> help?</span>
+            <a href="mailto:roxtheroof@gmail.com" class="top-bar-email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                roxtheroof@gmail.com
+            </a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" aria-label="Rox the Roof Home">
+                <img src="Assets/RoxtheRoof Logo Red SVG.svg" alt="Rox the Roof" class="nav-logo-img">
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:3086511030" class="nav-phone">
+                    <div class="phone-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                        </svg>
+                    </div>
+                    <span>308-651-1030</span>
+                </a>
+                <a href="tel:3086511030" class="btn btn-nav-cta">CALL NOW</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <div class="page-hero-inner">
+        <div class="container">
+            <div class="page-breadcrumb">
+                <a href="index.html">Home</a>
+                <span>›</span>
+                <span>About Us</span>
+            </div>
+            <h1 class="page-hero-title">Meet <strong>Rox the Roof</strong></h1>
+            <p class="page-hero-desc">A woman-owned, Latin-owned business built on quality, trust, and a deep love for
+                the Lexington, Nebraska community.</p>
+        </div>
+    </div>
+
+    <!-- Our Story -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-grid">
+                <div>
+                    <span class="story-label">Our Story</span>
+                    <h2 class="story-title">Built Right Here in <strong>Lexington</strong></h2>
+                    <p class="story-text">Rox the Roof was founded with a simple mission: to provide exceptional roofing
+                        and home improvement services to the Lexington, Nebraska community with honesty, quality, and
+                        genuine care for our neighbors.</p>
+                    <p class="story-text">As a <strong>woman-owned</strong> and <strong>Latin-owned</strong> business,
+                        we bring a unique perspective to the construction industry. We understand what it means to work
+                        hard, build something from nothing, and treat every customer's home as if it were our own.</p>
+                    <p class="story-text">From our very first roof installation to today, we've grown entirely by
+                        earning trust one project at a time. Our customers aren't just clients — they're our neighbors,
+                        friends, and community.</p>
+                    <div class="story-badges">
+                        <span class="story-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                                height="16">
+                                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                            Woman-Owned
+                        </span>
+                        <span class="story-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                                height="16">
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="2" y1="12" x2="22" y2="12" />
+                                <path
+                                    d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                            </svg>
+                            Latin-Owned
+                        </span>
+                        <span class="story-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                                height="16">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            Lexington, NE
+                        </span>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="visual-card">
+                        <div class="visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg></div>
+                        <div>
+                            <h4>Woman-Owned</h4>
+                            <p>Proudly woman-owned, bringing dedication, care, and a personal touch to every project.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="visual-card">
+                        <div class="visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="2" y1="12" x2="22" y2="12" />
+                                <path
+                                    d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                            </svg></div>
+                        <div>
+                            <h4>Latin-Owned</h4>
+                            <p>A diverse team committed to serving our community with respect and cultural pride.</p>
+                        </div>
+                    </div>
+                    <div class="visual-card">
+                        <div class="visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                                <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg></div>
+                        <div>
+                            <h4>Quality Guaranteed</h4>
+                            <p>We stand behind our work with warranties and a commitment to your satisfaction.</p>
+                        </div>
+                    </div>
+                    <div class="visual-card">
+                        <div class="visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                                <line x1="12" y1="1" x2="12" y2="23" />
+                                <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+                            </svg></div>
+                        <div>
+                            <h4>Free Estimates</h4>
+                            <p>No-obligation quotes with transparent, honest pricing — always.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Strip -->
+    <div class="stats-strip">
+        <div class="container">
+            <div class="stats-strip-inner">
+                <div class="strip-stat">
+                    <div class="strip-number">100+</div>
+                    <div class="strip-label">Projects Completed</div>
+                </div>
+                <div class="strip-stat">
+                    <div class="strip-number">5.0</div>
+                    <div class="strip-label">Star Rating</div>
+                </div>
+                <div class="strip-stat">
+                    <div class="strip-number">100%</div>
+                    <div class="strip-label">Satisfaction Rate</div>
+                </div>
+                <div class="strip-stat">
+                    <div class="strip-number">Free</div>
+                    <div class="strip-label">Estimates Always</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Values -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Values</span>
+                <h2 class="section-title">What We <strong>Stand For</strong></h2>
+                <p class="section-desc">The principles that guide every project we take on</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-card-number">01</span>
+                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg></div>
+                    <h3 class="service-title">Integrity</h3>
+                    <p class="service-desc">We do what we say we'll do. Honest pricing, honest work, honest
+                        communication — always, on every project.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-card-number">02</span>
+                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg></div>
+                    <h3 class="service-title">Quality</h3>
+                    <p class="service-desc">We never cut corners. Every project receives our full attention and best
+                        materials, no matter the scope.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-card-number">03</span>
+                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                        </svg></div>
+                    <h3 class="service-title">Community</h3>
+                    <p class="service-desc">Lexington is our home. We're invested in making our community stronger, one
+                        roof at a time.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-card-number">04</span>
+                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+                            <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" />
+                            <polyline points="9 21 9 13 15 13 15 21" />
+                        </svg></div>
+                    <h3 class="service-title">Family Values</h3>
+                    <p class="service-desc">We treat your home as if it were our own family's home — with care, respect,
+                        and genuine concern.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Identity -->
+    <section class="identity-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Who We Are</span>
+                <h2 class="section-title">A Different Kind of <strong>Roofing Company</strong></h2>
+            </div>
+            <div class="identity-grid">
+                <div class="identity-card">
+                    <h3>Woman-Owned &amp; Operated</h3>
+                    <p>In an industry dominated by large corporations, Rox the Roof brings a personal touch that bigger
+                        companies simply can't match. As a woman-owned business, we know what it takes to earn trust in
+                        this field — and we're proud of it every single day.</p>
+                    <p style="margin-top: var(--space-md);">Our ownership means you deal directly with decision-makers
+                        who care about the outcome of your project as much as you do.</p>
+                </div>
+                <div class="identity-card">
+                    <h3>Rooted in the Latin Community</h3>
+                    <p>As a Latin-owned business, we're proud to bring diverse perspectives and a strong work ethic to
+                        everything we do. We serve everyone in our community — and we speak Spanish too, so there's
+                        never a language barrier when you need help.</p>
+                    <p style="margin-top: var(--space-md);">Hablamos español. Estamos aquí para ayudarle con todos sus
+                        proyectos de techado y mejoras para el hogar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="about-cta">
+        <div class="container">
+            <h2>Let's Work Together</h2>
+            <p>Ready to start your project? We'd love to hear from you and earn your trust.</p>
+            <a href="tel:3086511030" class="btn-white">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                    <path
+                        d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                </svg>
+                308-651-1030 — Call Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="Assets/RoxtheRoof Logo Red SVG.svg" alt="Rox the Roof" class="footer-logo-img">
+                    </a>
+                    <p>Woman-owned, Latin-owned roofing company proudly serving Lexington, Nebraska and surrounding
+                        communities.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Residential Roofing</a></li>
+                        <li><a href="services.html">Commercial Roofing</a></li>
+                        <li><a href="services.html">Seamless Gutters</a></li>
+                        <li><a href="services.html">Metal Roofing</a></li>
+                        <li><a href="services.html">Window Installation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><a href="tel:3086511030">308-651-1030</a></p>
+                    <p><a href="mailto:roxtheroof@gmail.com">roxtheroof@gmail.com</a></p>
+                    <p>Lexington, Nebraska</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Rox the Roof. All rights reserved. Woman-Owned &amp; Latin-Owned Business.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+
+</html>

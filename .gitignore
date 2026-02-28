@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Dev server / build artifacts
+dist/
+.cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.cursor/
+*.swp
+
+# Env files
+.env
+.env.local
